@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biodata Arya - Bootstrap</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    #biodata-container {
+      transition: background-color 0.3s ease, color 0.3s ease;
+      padding: 20px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="card text-center">
+      <div class="card-header bg-primary text-white">
+        <h3>Biodata Diri</h3>
+      </div>
+      <div class="card-body" id="biodata-container">
+        <h5 class="card-title">Arya Hadi Pratama</h5>
+        <p class="card-text">NIM: 2211102329</p>
+
+        <!-- Tombol warna -->
+        <div class="mb-3">
+          <button class="btn btn-danger me-1" id="btn-red">Red</button>
+          <button class="btn btn-warning me-1" id="btn-yellow">Yellow</button>
+          <button class="btn btn-success me-1" id="btn-green">Green</button>
+          <button class="btn btn-primary me-1" id="btn-blue">Blue</button>
+          <button class="btn btn-secondary me-1" id="btn-reset">Reset</button>
+          <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#biodataModal">Modal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Bootstrap -->
+  <div class="modal fade" id="biodataModal" tabindex="-1" aria-labelledby="biodataModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title" id="biodataModalLabel">Modal Biodata</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li>Nama Panjang: Arya Hadi Pratama</li>
+            <li>Nama Panggilan: Arya</li>
+            <li>NIM: 2211102329</li>
+            <li>Hobi: Mendaki</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script untuk ubah warna -->
+  <script>
+    const container = document.getElementById("biodata-container");
+
+    function setBackground(color, textColor = "white") {
+      container.style.backgroundColor = color;
+      container.style.color = textColor;
+    }
+
+    document.getElementById("btn-red").addEventListener("click", () => {
+      setBackground("red");
+    });
+
+    document.getElementById("btn-yellow").addEventListener("click", () => {
+      setBackground("yellow", "black");
+    });
+
+    document.getElementById("btn-green").addEventListener("click", () => {
+      setBackground("green");
+    });
+
+    document.getElementById("btn-blue").addEventListener("click", () => {
+      setBackground("blue");
+    });
+
+    document.getElementById("btn-reset").addEventListener("click", () => {
+      setBackground("white", "black");
+    });
+  </script>
+</body>
+</html>
